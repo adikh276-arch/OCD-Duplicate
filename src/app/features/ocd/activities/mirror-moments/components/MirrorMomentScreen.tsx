@@ -1,6 +1,6 @@
 import { useState, useCallback, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { Button } from "../../components/ui/button";
+import { Button } from "@/components/ui/button";
 import LanguageSwitcher from "./LanguageSwitcher";
 
 interface MirrorMomentScreenProps {
@@ -160,3 +160,4 @@ const MirrorMomentScreen = ({ onBack, onComplete }: MirrorMomentScreenProps) => 
 
 
 export default MirrorMomentScreen;
+

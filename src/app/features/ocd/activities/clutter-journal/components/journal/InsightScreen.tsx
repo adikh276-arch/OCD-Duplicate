@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button } from "../../components/ui/button";
+import { Button } from "@/components/ui/button";
 
 const INSIGHTS = [
   { emoji: "😰", label: "A fear of forgetting" },
@@ -71,3 +71,4 @@ const InsightScreen = ({ onNext }: Props) => {
 };
 
 export default InsightScreen;
+

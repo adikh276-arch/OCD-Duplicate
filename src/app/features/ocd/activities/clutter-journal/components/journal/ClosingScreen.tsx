@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Button } from "../../components/ui/button";
+import { Button } from "@/components/ui/button";
 import { saveEntry, getEntryCount, formatDate } from "../../lib/journal-store";
 
 interface Props {
@@ -83,3 +83,4 @@ const ClosingScreen = ({ objectName, insight, onViewJournal, onClose }: Props) =
 };
 
 export default ClosingScreen;
+

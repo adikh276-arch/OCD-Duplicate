@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button } from "../../components/ui/button";
+import { Button } from "@/components/ui/button";
 
 const PROMPTS = [
   "When did this object come into your life? What was happening then?",
@@ -82,3 +82,4 @@ const ExplorationScreen = ({ onNext }: Props) => {
 };
 
 export default ExplorationScreen;
+

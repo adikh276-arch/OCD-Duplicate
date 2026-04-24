@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Button } from "../../components/ui/button";
+import { Button } from "@/components/ui/button";
 import { getEntries, type JournalEntry } from "../../lib/journal-store";
 
 interface Props {
@@ -70,3 +70,4 @@ const JournalScreen = ({ onStartEntry }: Props) => {
 };
 
 export default JournalScreen;
+

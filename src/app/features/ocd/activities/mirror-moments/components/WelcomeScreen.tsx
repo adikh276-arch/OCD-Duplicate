@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { Button } from "../../components/ui/button";
+import { Button } from "@/components/ui/button";
 import MirrorSVG from "../components/MirrorSVG";
 import LanguageSwitcher from "./LanguageSwitcher";
 
@@ -52,3 +52,4 @@ const WelcomeScreen = ({ onReady, onBack }: WelcomeScreenProps) => {
 
 
 export default WelcomeScreen;
+
