@@ -1,5 +1,5 @@
 import React, { useState, useCallback, useRef, useEffect } from 'react';
-import { useActivityDB } from '../../../hooks/useActivityDB';
+import { useActivityDB } from '@/app/features/ocd/hooks/useActivityDB';
 import { toast } from 'sonner';
 import Screen1Welcome from './Screen1Welcome';
 import Screen2WhatsHappening from './Screen2WhatsHappening';

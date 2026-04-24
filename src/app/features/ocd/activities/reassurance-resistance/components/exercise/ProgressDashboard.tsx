@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { format } from 'date-fns';
-import { Button } from '../components/ui/button';
-import { useActivityDB } from '../../../hooks/useActivityDB';
+import { Button } from '@/components/ui/button';
+import { useActivityDB } from '@/app/features/ocd/hooks/useActivityDB';
 
 interface Session {
   id: string;

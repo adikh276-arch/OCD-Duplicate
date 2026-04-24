@@ -1,6 +1,6 @@
 import React from 'react';
 import ScreenLayout from './ScreenLayout';
-import { Button } from '../components/ui/button';
+import { Button } from '@/components/ui/button';
 
 interface Screen10Props {
   onViewProgress: () => void;

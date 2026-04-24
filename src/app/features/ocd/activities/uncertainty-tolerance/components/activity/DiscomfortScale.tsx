@@ -1,4 +1,4 @@
-import { Slider } from '../components/ui/slider';
+import { Slider } from '@/components/ui/slider';
 
 interface Props {
   score: number | null;

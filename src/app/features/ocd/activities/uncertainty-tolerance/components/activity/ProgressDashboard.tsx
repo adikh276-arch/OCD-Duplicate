@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { getSavedSessions, SessionData } from '../hooks/useActivitySession';
+import { getSavedSessions, SessionData } from '../../hooks/useActivitySession';
 import { LineChart, Line, XAxis, YAxis, ResponsiveContainer, Tooltip } from 'recharts';
 
 interface Props {

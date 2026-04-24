@@ -1,6 +1,16 @@
 import { useTranslation } from 'react-i18next';
 import { useEffect } from 'react';
-import { SUPPORTED_LANGUAGES } from '../i18n';
+const SUPPORTED_LANGUAGES = [
+  { code: 'en', nativeName: 'English' },
+  { code: 'es', nativeName: 'Español' },
+  { code: 'fr', nativeName: 'Français' },
+  { code: 'de', nativeName: 'Deutsch' },
+  { code: 'hi', nativeName: 'हिन्दी' },
+  { code: 'ar', nativeName: 'العربية' },
+  { code: 'pt', nativeName: 'Português' },
+  { code: 'zh-CN', nativeName: '中文' },
+  { code: 'ja', nativeName: '日本語' },
+];
 import { Globe } from 'lucide-react';
 
 const LanguageSwitcher = () => {

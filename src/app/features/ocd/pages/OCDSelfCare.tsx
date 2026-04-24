@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
-import { motion, AnimatePresence } from "motion/react";
+import { motion, AnimatePresence, type Variants } from "motion/react";
 import { 
   ChevronLeft, 
   MessageCircle, 
@@ -103,9 +103,9 @@ export function OCDSelfCare() {
     }
   };
 
-  const item = {
+  const item: Variants = {
     hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 100 } }
+    show: { opacity: 1, y: 0, transition: { type: 'spring' as const, stiffness: 100 } }
   };
 
   return (

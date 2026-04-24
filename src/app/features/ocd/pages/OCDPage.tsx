@@ -17,9 +17,12 @@ import {
   Award, 
   Battery, 
   Users,
-  Calendar
+  Calendar,
+  BookOpen,
+  Heart,
+  CheckCircle
 } from "lucide-react";
-import { motion, AnimatePresence } from "motion/react";
+import { motion, AnimatePresence, type Variants } from "motion/react";
 import { MobileAppModal } from "@/components/MobileAppModal";
 import { ImageWithFallback } from "@/components/figma/ImageWithFallback";
 import ocdCtaImage from "figma:asset/db1e749f8f0e51fd6bed6aac17a276ea49c074c0.png";
@@ -54,9 +57,9 @@ export function OCDPage() {
     }
   };
 
-  const item = {
+  const item: Variants = {
     hidden: { opacity: 0, y: 12 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } }
+    show: { opacity: 1, y: 0, transition: { duration: 0.4, ease: 'easeOut' as const } }
   };
 
   const activityConfig: Record<string, { bgColor: string; iconBg: string; textColor: string; icon: React.ReactNode }> = {
