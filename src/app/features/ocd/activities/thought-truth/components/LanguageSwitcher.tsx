@@ -1,7 +1,5 @@
 import { useTranslation } from "react-i18next";
 import { useState, useEffect } from "react";
-import { PARAMS } from "../i18n";
-
 export const LanguageSwitcher = () => {
   const { i18n } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
@@ -40,7 +38,13 @@ export const LanguageSwitcher = () => {
 
       {isOpen && (
         <div className="absolute right-0 mt-2 w-48 bg-white rounded-xl shadow-lg border border-purple-100 overflow-hidden max-h-64 overflow-y-auto">
-          {Object.entries(PARAMS).map(([key, label]) => (
+          {Object.entries({
+            en: "English",
+            es: "Español",
+            fr: "Français",
+            de: "Deutsch",
+            hi: "हिन्दी",
+          }).map(([key, label]) => (
             <button
               key={key}
               onClick={() => changeLanguage(key)}
@@ -48,7 +52,7 @@ export const LanguageSwitcher = () => {
                 currentLang.startsWith(key) ? "font-bold text-purple-600 bg-purple-50/50" : "text-gray-700 font-medium"
               }`}
             >
-              {label}
+              {(label as string)}
             </button>
           ))}
         </div>

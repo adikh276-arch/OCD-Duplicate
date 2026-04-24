@@ -6,7 +6,7 @@ import Screen3Tool from "../components/screens/Screen3Tool";
 import Screen4Practice from "../components/screens/Screen4Practice";
 import Screen5Reflection from "../components/screens/Screen5Reflection";
 import HistoryScreen, { type SessionEntry } from "../components/screens/HistoryScreen";
-import { useActivityDB } from "../../../hooks/useActivityDB";
+import { useActivityDB } from "@/app/features/ocd/hooks/useActivityDB";
 
 type View = "exercise" | "history";
 

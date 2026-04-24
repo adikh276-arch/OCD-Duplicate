@@ -1,5 +1,5 @@
 import { useState, useCallback, useRef } from "react";
-import { useActivityDB } from "../../../hooks/useActivityDB";
+import { useActivityDB } from "@/app/features/ocd/hooks/useActivityDB";
 import ScreenTransition from "./ScreenTransition";
 import Screen1Welcome from "./Screen1Welcome";
 import Screen2Notice from "./Screen2Notice";

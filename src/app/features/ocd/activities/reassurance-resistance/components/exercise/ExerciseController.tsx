@@ -30,7 +30,7 @@ interface SessionState {
 const ExerciseController: React.FC = () => {
   const [screen, setScreen] = useState<Screen>('welcome');
   const [isTransitioning, setIsTransitioning] = useState(false);
-  const transitionTimeout = useRef<ReturnType<typeof setTimeout>>();
+  const transitionTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const navigate = useCallback((next: Screen) => {
     setIsTransitioning(true);

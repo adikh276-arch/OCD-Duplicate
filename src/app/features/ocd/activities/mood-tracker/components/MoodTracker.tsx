@@ -1,8 +1,15 @@
 import { useState, useRef, useEffect } from "react";
 import { Check, ChevronDown, History, X, Clock } from "lucide-react";
-import { useActivityDB } from "../../../hooks/useActivityDB";
-import { DAYS, MESSAGES, Day } from "../constants/messages";
+import { useActivityDB } from "@/app/features/ocd/hooks/useActivityDB";
 import { toast } from "sonner";
+
+const DAYS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+const MESSAGES = {
+  welcome: "How are you feeling today?",
+  success: "Mood logged successfully!",
+  history: "Your mood history",
+};
+type Day = string;
 
 const MOODS = [
   { emoji: "😊", label: "Great", value: 5, colorVar: "--mood-great" },

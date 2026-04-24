@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import { LadderStep } from "../components/FearLadder/LadderBuilder";
-import { useActivityDB } from "../../../hooks/useActivityDB";
+import { useActivityDB } from "@/app/features/ocd/hooks/useActivityDB";
 import { toast } from "sonner";
 
 export interface DayLog {

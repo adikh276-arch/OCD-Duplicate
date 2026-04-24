@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { ArrowLeft } from "lucide-react";
-import { useActivityDB } from "../../../hooks/useActivityDB";
+import { useActivityDB } from "@/app/features/ocd/hooks/useActivityDB";
 
 interface Props {
   onBack: () => void;
