@@ -1,5 +1,5 @@
 import { LadderStep } from "./LadderBuilder";
-import { DayLog } from "../hooks/useFearLadderStorage";
+import { DayLog } from "../../hooks/useFearLadderStorage";
 import { Calendar, Leaf } from "lucide-react";
 
 interface TodaysPracticeProps {

@@ -1,7 +1,7 @@
 import React from "react";
-import TagLabel from "../components/TagLabel";
-import CTAButton from "../components/CTAButton";
-import { cn } from "../lib/utils";
+import TagLabel from "../../components/TagLabel";
+import CTAButton from "../../components/CTAButton";
+import { cn } from "../../lib/utils";
 
 const feelings = [
   { value: "much_less_powerful", emoji: "💜", label: "Much less powerful" },

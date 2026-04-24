@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { Button } from "../components/ui/button";
-import { saveEntry, getEntryCount, formatDate } from "../lib/journal-store";
+import { Button } from "../../components/ui/button";
+import { saveEntry, getEntryCount, formatDate } from "../../lib/journal-store";
 
 interface Props {
   objectName: string;

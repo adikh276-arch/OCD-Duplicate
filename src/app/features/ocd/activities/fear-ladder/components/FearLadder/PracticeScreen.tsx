@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { LadderStep } from "./LadderBuilder";
-import { DayLog } from "../hooks/useFearLadderStorage";
+import { DayLog } from "../../hooks/useFearLadderStorage";
 
 interface PracticeScreenProps {
   completedCount: number;

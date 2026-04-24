@@ -1,6 +1,6 @@
 import React from "react";
-import TagLabel from "../components/TagLabel";
-import CTAButton from "../components/CTAButton";
+import TagLabel from "../../components/TagLabel";
+import CTAButton from "../../components/CTAButton";
 
 interface Screen1Props {
   onNext: () => void;

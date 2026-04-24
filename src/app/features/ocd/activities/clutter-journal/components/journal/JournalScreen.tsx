@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { Button } from "../components/ui/button";
-import { getEntries, type JournalEntry } from "../lib/journal-store";
+import { Button } from "../../components/ui/button";
+import { getEntries, type JournalEntry } from "../../lib/journal-store";
 
 interface Props {
   onStartEntry: () => void;

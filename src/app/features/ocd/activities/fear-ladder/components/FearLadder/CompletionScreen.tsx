@@ -1,4 +1,4 @@
-import { DayLog } from "../hooks/useFearLadderStorage";
+import { DayLog } from "../../hooks/useFearLadderStorage";
 import { LadderStep } from "./LadderBuilder";
 import { useEffect, useState } from "react";
 
