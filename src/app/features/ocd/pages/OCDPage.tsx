@@ -19,8 +19,7 @@ import {
   Users,
   Calendar,
   BookOpen,
-  Heart,
-  CheckCircle
+  Heart
 } from "lucide-react";
 import { motion, AnimatePresence, type Variants } from "motion/react";
 import { MobileAppModal } from "@/components/MobileAppModal";
