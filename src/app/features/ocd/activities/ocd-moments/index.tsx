@@ -1,12 +1,12 @@
 // @ts-nocheck
 import { useState } from 'react';
-import LogForm from '../components/LogForm';
-import History from '../components/History';
-import Insights from '../components/Insights';
+import LogForm from './components/LogForm';
+import History from './components/History';
+import Insights from './components/Insights';
 import { TrendingUp, PenLine, Clock } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import { LanguageSwitcher } from '../components/LanguageSwitcher';
+import { LanguageSwitcher } from './components/LanguageSwitcher';
 
 type Tab = 'log' | 'history' | 'insights';
 

@@ -1,5 +1,5 @@
 // @ts-nocheck
-import OneThingOut from "../components/OneThingOut";
+import OneThingOut from "./components/OneThingOut";
 
 const Index = () => <OneThingOut />;
 

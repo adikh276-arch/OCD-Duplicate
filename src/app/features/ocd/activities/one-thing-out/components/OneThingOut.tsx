@@ -3,7 +3,7 @@ import { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft } from "lucide-react";
 import DrawerIcon from "./illustrations/DrawerIcon";
-import drawerIcon from "../assets/drawer-icon.png";
+const drawerIcon = ""; // asset stub
 import CheckCircle from "./illustrations/CheckCircle";
 import { useTranslation } from "react-i18next";
 import { LanguageSwitcher } from "./LanguageSwitcher";
