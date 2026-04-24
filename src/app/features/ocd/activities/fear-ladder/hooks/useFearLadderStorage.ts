@@ -85,28 +85,6 @@ export const useFearLadderStorage = (userId: string | null) => {
     loadData();
   }, [userId, executeQuery]);
 
-export type AppPhase = "build" | "practice" | "completed";
-
-export const useFearLadderStorage = (userId: string | null) => {
-  const [data, setData] = useState<FearLadderData>(getDefaultData);
-  const [loading, setLoading] = useState(true);
-  const [justSaved, setJustSaved] = useState(false);
-  const debounceTimers = useRef<Record<string, ReturnType<typeof setTimeout>>>({});
-
-  // Reload when userId changes
-  useEffect(() => {
-    if (userId) {
-      setLoading(true);
-      loadFromSupabase(userId)
-        .then((loaded) => setData(loaded))
-        .catch((err) => console.error("Failed to load fear ladder data:", err))
-        .finally(() => setLoading(false));
-    } else {
-      setData(getDefaultData());
-      setLoading(false);
-    }
-  }, [userId]);
-
   const completedCount = data.logs.length;
 
   // Sorted steps by anxiety (low to high)
@@ -114,53 +92,31 @@ export const useFearLadderStorage = (userId: string | null) => {
     .filter((s) => s.situation.trim().length > 0)
     .sort((a, b) => a.anxiety - b.anxiety);
 
-  // Determine phase — STRICT and STABLE
-  // Phase is build if NO session exists. Period.
+  // Determine phase
   const phase: AppPhase = !data.sessionId
     ? "build"
     : completedCount >= sortedSteps.length
       ? "completed"
       : "practice";
 
-  // Current step is the next one to practice, only relevant in practice phase
   const currentStep = (phase === "practice" && completedCount < sortedSteps.length)
     ? sortedSteps[completedCount]
     : null;
 
-  useEffect(() => {
-    if (!loading) {
-      console.log("Fear Ladder State:", {
-        sessionId: data.sessionId,
-        phase,
-        stepsCount: data.steps.length,
-        sortedStepsCount: sortedSteps.length,
-        completedCount,
-        currentStep: currentStep?.situation,
-        justSaved,
-        userId
-      });
-    }
-  }, [loading, data.sessionId, phase, data.steps.length, sortedSteps.length, completedCount, currentStep?.situation, justSaved, userId]);
-
-  // Completed step IDs from logs
   const completedStepIds = new Set(data.logs.map((l) => l.stepId));
 
-  // Check if current step already has a log (prevent duplicates)
   const currentStepAlreadyLogged = currentStep
     ? data.logs.some((l) => l.stepId === currentStep.id)
     : false;
 
-  // Update local field
   const updateField = useCallback(<K extends keyof FearLadderData>(
     key: K,
     value: FearLadderData[K]
   ) => {
     setData((prev) => {
-      // Allow editing anytime if in build phase
       if (!prev.sessionId) {
         return { ...prev, [key]: value };
       }
-      // Immutable after build is done
       if (key === "goal" || key === "thought" || key === "reward") {
         return prev;
       }
@@ -168,15 +124,13 @@ export const useFearLadderStorage = (userId: string | null) => {
     });
   }, []);
 
-  // Update steps (only in build phase)
   const updateSteps = useCallback((newSteps: LadderStep[]) => {
     setData((prev) => {
-      if (prev.sessionId) return prev; // Immutable after build is done
+      if (prev.sessionId) return prev;
       return { ...prev, steps: newSteps };
     });
   }, []);
 
-  // Save session + steps to Supabase
   const saveSession = useCallback(async () => {
     if (!userId) return { success: false as const, error: "Authentication required." };
 
@@ -217,7 +171,6 @@ export const useFearLadderStorage = (userId: string | null) => {
     return { success: false as const };
   }, [data.goal, data.thought, data.reward, data.steps, userId, executeQuery]);
 
-  // Add practice log
   const addLog = useCallback(async (log: DayLog) => {
     if (!userId || !data.sessionId) return { success: false as const };
 
@@ -246,7 +199,6 @@ export const useFearLadderStorage = (userId: string | null) => {
     return { success: true as const };
   }, [data.sessionId, data.logs, userId, executeQuery]);
 
-  // RESET FOR TESTING: Clears local state and re-triggers build phase
   const resetLadder = useCallback(async () => {
     setData(getDefaultData());
     setJustSaved(false);
@@ -271,4 +223,3 @@ export const useFearLadderStorage = (userId: string | null) => {
     loading,
   };
 };
-
