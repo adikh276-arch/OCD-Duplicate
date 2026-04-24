@@ -1,0 +1,58 @@
+name: Build & Push ocd_selfcare:1.0
+
+on:
+  push:
+    branches: [main, feature/ocd-integration]
+  workflow_dispatch:
+
+jobs:
+  verify-and-build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm i
+
+      - name: Type check
+        run: npx tsc --noEmit
+
+      - name: Build
+        run: npm run build
+
+      - name: Verify DB credentials not hardcoded
+        run: |
+          grep -rn "npg_A0iG3JvxKUDN" src/ && exit 1 || true
+          grep -rn "ep-steep-term-aoxd3b8h" src/ && exit 1 || true
+
+      - name: Verify no external activity links remain
+        run: |
+          grep -rn "adikh276-arch" src/ && exit 1 || true
+
+      - name: Log in to registry
+        run: |
+          echo "${{ secrets.PASSWORD }}" | docker login bunker.mantracare.com \
+            -u "${{ secrets.USERNAME }}" --password-stdin
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: ./Dockerfile
+          platforms: linux/amd64
+          push: true
+          tags: |
+            bunker.mantracare.com/lovable/ocd_selfcare:1.0
+            bunker.mantracare.com/lovable/ocd_selfcare:latest
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
