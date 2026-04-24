@@ -22,7 +22,7 @@ jobs:
         run: npm i
 
       - name: Type check
-        run: npx tsc --noEmit
+        run: npx -p typescript tsc --noEmit
 
       - name: Build
         run: npm run build
