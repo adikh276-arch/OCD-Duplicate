@@ -72,7 +72,7 @@ const ExplorationScreen = ({ onNext }: Props) => {
 
       {hasAnyAnswer && (
         <div className="pt-6">
-          <Button variant="journal" onClick={onNext}>
+          <Button variant="default" onClick={onNext}>
             I've Reflected Enough →
           </Button>
         </div>

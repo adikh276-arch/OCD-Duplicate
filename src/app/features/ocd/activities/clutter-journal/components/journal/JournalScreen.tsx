@@ -61,7 +61,7 @@ const JournalScreen = ({ onStartEntry }: Props) => {
       </div>
 
       <div className="pt-6">
-        <Button variant="journal" onClick={onStartEntry}>
+        <Button variant="default" onClick={onStartEntry}>
           Start Today's Entry →
         </Button>
       </div>

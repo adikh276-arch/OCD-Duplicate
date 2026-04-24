@@ -61,7 +61,7 @@ const InsightScreen = ({ onNext }: Props) => {
 
       {selected && (
         <div className="pt-6">
-          <Button variant="journal" onClick={() => onNext(selected)}>
+          <Button variant="default" onClick={() => onNext(selected)}>
             I See It Now →
           </Button>
         </div>

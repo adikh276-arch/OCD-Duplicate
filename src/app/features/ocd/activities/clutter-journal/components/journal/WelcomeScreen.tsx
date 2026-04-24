@@ -55,7 +55,7 @@ const WelcomeScreen = ({ onNext, onViewJournal }: Props) => {
 
       <div className="pt-6">
         <Button
-          variant="journal"
+          variant="default"
           disabled={!objectName.trim()}
           onClick={() => onNext(objectName.trim())}
         >

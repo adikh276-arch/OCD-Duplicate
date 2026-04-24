@@ -74,7 +74,7 @@ const ClosingScreen = ({ objectName, insight, onViewJournal, onClose }: Props) =
       </div>
 
       <div className="pt-6">
-        <Button variant="journal" onClick={onClose}>
+        <Button variant="default" onClick={onClose}>
           Close for Today
         </Button>
       </div>
