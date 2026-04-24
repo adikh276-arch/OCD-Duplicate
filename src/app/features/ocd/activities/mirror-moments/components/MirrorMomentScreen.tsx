@@ -147,7 +147,7 @@ const MirrorMomentScreen = ({ onBack, onComplete }: MirrorMomentScreenProps) => 
       {/* Bottom button */}
       <div className="w-full max-w-[375px] px-8 pb-10">
         {allViewed ? (
-          <Button variant="warm-complete" size="lg" className="h-14 text-lg" onClick={handleComplete}>
+          <Button variant="default" size="lg" className="h-14 text-lg" onClick={handleComplete}>
             {t("mirror.complete")}
           </Button>
         ) : (
@@ -160,4 +160,5 @@ const MirrorMomentScreen = ({ onBack, onComplete }: MirrorMomentScreenProps) => 
 
 
 export default MirrorMomentScreen;
+
 

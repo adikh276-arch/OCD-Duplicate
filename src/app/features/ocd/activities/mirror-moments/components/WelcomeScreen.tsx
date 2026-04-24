@@ -42,7 +42,7 @@ const WelcomeScreen = ({ onReady, onBack }: WelcomeScreenProps) => {
 
       {/* Bottom button */}
       <div className="w-full max-w-[375px] px-8 pb-10">
-        <Button variant="warm" size="lg" className="w-full h-14 text-lg" onClick={onReady}>
+        <Button variant="default" size="lg" className="w-full h-14 text-lg" onClick={onReady}>
           {t("welcome.button")}
         </Button>
       </div>
@@ -52,4 +52,5 @@ const WelcomeScreen = ({ onReady, onBack }: WelcomeScreenProps) => {
 
 
 export default WelcomeScreen;
+
 
