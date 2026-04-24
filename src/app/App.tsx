@@ -1,4 +1,5 @@
-import { BrowserRouter, Routes, Route, Navigate } from "react-router";
+import { Routes, Route, Navigate } from "react-router";
+import { BrowserRouter } from "react-router-dom";
 import { OCDSelfCare } from "./features/ocd/pages/OCDSelfCare";
 import { OCDPage } from "./features/ocd/pages/OCDPage";
 import { HealthOCDPage } from "./features/ocd/pages/HealthOCDPage";
@@ -51,7 +52,7 @@ import { OCDActivities } from "./features/ocd/activities/OCDActivities";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/ocd_management">
       <Routes>
         <Route path="/" element={<OCDSelfCare />} />
         <Route path="/ocd" element={<OCDPage />} />
