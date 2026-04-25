@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { AuthProvider } from "./features/ocd/context/AuthProvider";
 import { OCDTipsPage } from "./features/ocd/pages/OCDTipsPage";
 import { OCDSelfCare } from "./features/ocd/pages/OCDSelfCare";
 import { OCDPage } from "./features/ocd/pages/OCDPage";
@@ -51,7 +52,8 @@ import { OCDActivities } from "./features/ocd/activities/OCDActivities";
 
 function App() {
   return (
-    <BrowserRouter basename="/ocd_selfcare">
+    <AuthProvider>
+      <BrowserRouter basename="/ocd_selfcare">
       <Routes>
         <Route path="/" element={<OCDSelfCare />} />
         <Route path="/manage" element={<OCDPage />} />
@@ -108,6 +110,7 @@ function App() {
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>
+    </AuthProvider>
   );
 }
 

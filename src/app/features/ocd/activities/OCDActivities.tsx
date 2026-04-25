@@ -1,6 +1,5 @@
 import React, { lazy, Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { TokenGuard } from '../components/TokenGuard';
 import { ActivityLayout } from '../components/ActivityLayout';
 
 // Loading Component
@@ -10,15 +9,13 @@ const Loading = () => (
   </div>
 );
 
-// Helper to wrap activity
+// Helper to wrap activity — no TokenGuard needed, auth is handled globally by AuthProvider
 const wrap = (Component: any, title: string) => (
-  <TokenGuard>
-    <ActivityLayout title={title}>
-      <Suspense fallback={<Loading />}>
-        <Component />
-      </Suspense>
-    </ActivityLayout>
-  </TokenGuard>
+  <ActivityLayout title={title}>
+    <Suspense fallback={<Loading />}>
+      <Component />
+    </Suspense>
+  </ActivityLayout>
 );
 
 // Lazy imports
@@ -72,7 +69,7 @@ export const OCDActivities = () => {
       <Route path="truth-seeker" element={wrap(TruthSeeker, "Truth Seeker Quiz")} />
       <Route path="uncertainty-acceptance" element={wrap(UncertaintyAcceptance, "Uncertainty Acceptance")} />
       <Route path="uncertainty-tolerance" element={wrap(UncertaintyTolerance, "Uncertainty Tolerance")} />
-      
+
       {/* Group B */}
       <Route path="fear-ladder" element={wrap(FearLadder, "Fear Ladder")} />
       <Route path="mood-tracker" element={wrap(MoodTracker, "Mood Tracker")} />
