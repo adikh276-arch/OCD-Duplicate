@@ -5,13 +5,16 @@
   "type": "module",
   "scripts": {
     "build": "vite build",
-    "dev": "vite"
+    "dev": "vite",
+    "start": "node server/index.js",
+    "server": "node server/index.js"
   },
   "dependencies": {
     "@emotion/react": "11.14.0",
     "@emotion/styled": "11.14.1",
     "@mui/icons-material": "7.3.5",
     "@mui/material": "7.3.5",
+    "@neondatabase/serverless": "^1.1.0",
     "@popperjs/core": "2.11.8",
     "@radix-ui/react-accordion": "1.2.3",
     "@radix-ui/react-alert-dialog": "1.1.6",
@@ -44,8 +47,10 @@
     "class-variance-authority": "0.7.1",
     "clsx": "2.1.1",
     "cmdk": "1.1.1",
+    "cors": "^2.8.6",
     "date-fns": "3.6.0",
     "embla-carousel-react": "8.6.0",
+    "express": "^5.2.1",
     "framer-motion": "^12.38.0",
     "i18next": "^23.16.8",
     "input-otp": "1.4.2",

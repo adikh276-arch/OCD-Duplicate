@@ -16,38 +16,66 @@ const getHeaders = (): Record<string, string> => {
     };
 };
 
-const API_BASE = '/api';
+const API_BASE = '/api/persistence';
 
 export const saveEntry = async (entry: Omit<LogEntry, 'id' | 'timestamp'>): Promise<void> => {
-    const res = await fetch(`${API_BASE}/entries`, {
+    const res = await fetch(API_BASE, {
         method: 'POST',
         headers: getHeaders(),
         body: JSON.stringify({
-            location: entry.location,
-            customLocation: entry.customLocation,
-            urge: entry.urge,
-            response: entry.response,
+            userId: sessionStorage.getItem('user_id'),
+            activity: 'ocd-moments',
+            action: 'save_entry',
+            payload: entry
         }),
     });
     if (!res.ok) throw new Error('Failed to save entry');
 };
 
 export const getEntriesGroupedByDay = async (): Promise<Record<string, LogEntry[]>> => {
-    const res = await fetch(`${API_BASE}/entries/grouped`, { headers: getHeaders() });
+    const res = await fetch(API_BASE, {
+        method: 'POST',
+        headers: getHeaders(),
+        body: JSON.stringify({
+            userId: sessionStorage.getItem('user_id'),
+            activity: 'ocd-moments',
+            action: 'get_grouped_entries',
+            payload: {}
+        }),
+    });
     if (!res.ok) throw new Error('Failed to fetch entries');
-    return res.json();
+    const result = await res.json();
+    return result.data;
 };
 
 export const getRecentEntriesByLocation = async (location: string, limit = 4): Promise<LogEntry[]> => {
-    const res = await fetch(`${API_BASE}/entries/recent?location=${encodeURIComponent(location)}&limit=${limit}`, {
+    const res = await fetch(API_BASE, {
+        method: 'POST',
         headers: getHeaders(),
+        body: JSON.stringify({
+            userId: sessionStorage.getItem('user_id'),
+            activity: 'ocd-moments',
+            action: 'get_recent',
+            payload: { location, limit }
+        }),
     });
     if (!res.ok) throw new Error('Failed to fetch recent entries');
-    return res.json();
+    const result = await res.json();
+    return result.data;
 };
 
 export const getWeekEntries = async (weeksAgo = 0): Promise<LogEntry[]> => {
-    const res = await fetch(`${API_BASE}/entries/week?weeksAgo=${weeksAgo}`, { headers: getHeaders() });
+    const res = await fetch(API_BASE, {
+        method: 'POST',
+        headers: getHeaders(),
+        body: JSON.stringify({
+            userId: sessionStorage.getItem('user_id'),
+            activity: 'ocd-moments',
+            action: 'get_week_entries',
+            payload: { weeksAgo }
+        }),
+    });
     if (!res.ok) throw new Error('Failed to fetch week entries');
-    return res.json();
+    const result = await res.json();
+    return result.data;
 };

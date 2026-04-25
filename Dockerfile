@@ -8,15 +8,18 @@ COPY . .
 RUN npm run build
 
 
-FROM nginx:alpine
-WORKDIR /usr/share/nginx/html
+FROM node:20-alpine
+WORKDIR /app
 
-# Copy built assets into the subpath directory
-COPY --from=builder /app/dist /usr/share/nginx/html/ocd_selfcare
+COPY --from=builder /app/package*.json ./
+RUN npm i --omit=dev
 
-# Remove default nginx config and replace with subpath config
-RUN rm /etc/nginx/conf.d/default.conf
-COPY vite-nginx.conf /etc/nginx/conf.d/nginx.conf
+COPY --from=builder /app/dist ./dist
+COPY --from=builder /app/server ./server
+
+ENV NODE_ENV=production
+ENV PORT=80
 
 EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
+
+CMD ["npm", "start"]
