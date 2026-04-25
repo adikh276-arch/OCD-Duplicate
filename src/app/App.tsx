@@ -51,7 +51,7 @@ import { OCDActivities } from "./features/ocd/activities/OCDActivities";
 
 function App() {
   return (
-    <BrowserRouter basename="/ocd_management">
+    <BrowserRouter basename="/ocd_selfcare">
       <Routes>
         <Route path="/" element={<OCDSelfCare />} />
         <Route path="/ocd" element={<OCDPage />} />
