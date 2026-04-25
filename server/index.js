@@ -19,14 +19,14 @@ app.use((req, res, next) => {
 
 // Health check
 app.get('/health', (req, res) => res.status(200).send('OK'));
-app.get('/api/health', (req, res) => res.status(200).json({ status: 'OK', timestamp: new Date().toISOString() }));
+app.get('/ocd_selfcare/api/health', (req, res) => res.status(200).json({ status: 'OK', timestamp: new Date().toISOString() }));
 
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL || 'postgresql://neondb_owner:npg_A0iG3JvxKUDN@ep-steep-term-aoxd3b8h-pooler.c-2.ap-southeast-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require'
 });
 
 // Standardized MantraCare Persistence API
-app.post('/api/persistence', async (req, res) => {
+app.post('/ocd_selfcare/api/persistence', async (req, res) => {
   const { userId, activity, action, payload } = req.body;
 
   if (!userId || !activity || !action) {

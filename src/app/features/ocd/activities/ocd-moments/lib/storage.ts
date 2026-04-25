@@ -16,7 +16,7 @@ const getHeaders = (): Record<string, string> => {
     };
 };
 
-const API_BASE = '/api/persistence';
+const API_BASE = '/ocd_selfcare/api/persistence';
 
 export const saveEntry = async (entry: Omit<LogEntry, 'id' | 'timestamp'>): Promise<void> => {
     const res = await fetch(API_BASE, {
