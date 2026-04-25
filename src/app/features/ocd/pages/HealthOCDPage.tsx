@@ -63,7 +63,7 @@ const tools: Tool[] = [
     icon: Shield,
     bgColor: "#FFF4E5",
     iconColor: "#FF8C42",
-    url: "/ocd/activities/reassurance-resistance"
+    url: "/activities/reassurance-resistance"
   },
   {
     id: "uncertainty-tolerance",
@@ -71,7 +71,7 @@ const tools: Tool[] = [
     icon: Timer,
     bgColor: "#E3F2FD",
     iconColor: "#42A5F5",
-    url: "/ocd/activities/uncertainty-tolerance"
+    url: "/activities/uncertainty-tolerance"
   },
   {
     id: "psycho-education",
@@ -79,7 +79,7 @@ const tools: Tool[] = [
     icon: BookOpen,
     bgColor: "#E8F5E9",
     iconColor: "#66BB6A",
-    url: "/ocd/activities/anxiety-cycle"
+    url: "/activities/anxiety-cycle"
   },
   {
     id: "mirror-moments",
@@ -87,7 +87,7 @@ const tools: Tool[] = [
     icon: Sparkles,
     bgColor: "#F3E5F5",
     iconColor: "#AB47BC",
-    url: "/ocd/activities/mirror-moments"
+    url: "/activities/mirror-moments"
   }
 ];
 

@@ -65,21 +65,21 @@ interface MindfulnessCard {
 const topicCards: TopicCard[] = [
   { id: "ocd-tips", icon: Lightbulb, label: "OCD Tips", bgColor: "#FFF4E5", iconColor: "#FFB347", url: "/ocd" },
   { id: "manage-ocd", icon: Shield, label: "Manage OCD", bgColor: "#EBF4FF", iconColor: "#4F95FF", url: "/ocd" },
-  { id: "fear-ladder", icon: TrendingUp, label: "Fear Ladder", bgColor: "#F3EEFF", iconColor: "#9D6CFF", url: "/ocd/activities/fear-ladder" },
-  { id: "self-compassion", icon: Heart, label: "Self Compassion", bgColor: "#FFEBF0", iconColor: "#FF6B9D", url: "/ocd/activities/self-compassion" },
-  { id: "ocd-cycle", icon: RefreshCw, label: "OCD Cycle", bgColor: "#E0F7FA", iconColor: "#00BCD4", url: "/ocd/activities/ocd-cycle" },
-  { id: "thought-truth", icon: Brain, label: "Thought or Truth", bgColor: "#E8F8F5", iconColor: "#34D399", url: "/ocd/activities/thought-truth" },
-  { id: "success-stories", icon: Award, label: "Success Stories", bgColor: "#F7FEE7", iconColor: "#84CC16", url: "/ocd/activities/ocd-success-stories" },
-  { id: "trigger-map", icon: BookOpen, label: "Trigger Map", bgColor: "#EDE9FE", iconColor: "#8B5CF6", url: "/ocd/activities/trigger-map" },
+  { id: "fear-ladder", icon: TrendingUp, label: "Fear Ladder", bgColor: "#F3EEFF", iconColor: "#9D6CFF", url: "/activities/fear-ladder" },
+  { id: "self-compassion", icon: Heart, label: "Self Compassion", bgColor: "#FFEBF0", iconColor: "#FF6B9D", url: "/activities/self-compassion" },
+  { id: "ocd-cycle", icon: RefreshCw, label: "OCD Cycle", bgColor: "#E0F7FA", iconColor: "#00BCD4", url: "/activities/ocd-cycle" },
+  { id: "thought-truth", icon: Brain, label: "Thought or Truth", bgColor: "#E8F8F5", iconColor: "#34D399", url: "/activities/thought-truth" },
+  { id: "success-stories", icon: Award, label: "Success Stories", bgColor: "#F7FEE7", iconColor: "#84CC16", url: "/activities/ocd-success-stories" },
+  { id: "trigger-map", icon: BookOpen, label: "Trigger Map", bgColor: "#EDE9FE", iconColor: "#8B5CF6", url: "/activities/trigger-map" },
 ];
 
 const selfCareToolCards: TopicCard[] = [
-  { id: "log-ocd-moments", icon: Clock, label: "Log OCD Moments", bgColor: "linear-gradient(135deg, #a855f7 0%, #9333ea 100%)", iconColor: "#A855F7", url: "/ocd/activities/ocd-moments" },
-  { id: "ocd-daily-life", icon: Calendar, label: "OCD In Daily Life", bgColor: "linear-gradient(135deg, #06b6d4 0%, #0891b2 100%)", iconColor: "#06B6D4", url: "/ocd/activities/ocd-daily-life" },
-  { id: "mood-tracker", icon: Smile, label: "Mood Tracker", bgColor: "linear-gradient(135deg, #f59e0b 0%, #d97706 100%)", iconColor: "#F59E0B", url: "/ocd/activities/mood-tracker" },
-  { id: "clutter-journal", icon: Star, label: "Clutter Journal", bgColor: "linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%)", iconColor: "#FBBF24", url: "/ocd/activities/clutter-journal" },
-  { id: "brave-steps", icon: Sparkles, label: "Brave Steps", bgColor: "linear-gradient(135deg, #ec4899 0%, #db2777 100%)", iconColor: "#EC4899", url: "/ocd/activities/brave-steps" },
-  { id: "urge-surfing", icon: TrendingUp, label: "Urge Surfing", bgColor: "linear-gradient(135deg, #10b981 0%, #059669 100%)", iconColor: "#10B981", url: "/ocd/activities/urge-surfing" },
+  { id: "log-ocd-moments", icon: Clock, label: "Log OCD Moments", bgColor: "linear-gradient(135deg, #a855f7 0%, #9333ea 100%)", iconColor: "#A855F7", url: "/activities/ocd-moments" },
+  { id: "ocd-daily-life", icon: Calendar, label: "OCD In Daily Life", bgColor: "linear-gradient(135deg, #06b6d4 0%, #0891b2 100%)", iconColor: "#06B6D4", url: "/activities/ocd-daily-life" },
+  { id: "mood-tracker", icon: Smile, label: "Mood Tracker", bgColor: "linear-gradient(135deg, #f59e0b 0%, #d97706 100%)", iconColor: "#F59E0B", url: "/activities/mood-tracker" },
+  { id: "clutter-journal", icon: Star, label: "Clutter Journal", bgColor: "linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%)", iconColor: "#FBBF24", url: "/activities/clutter-journal" },
+  { id: "brave-steps", icon: Sparkles, label: "Brave Steps", bgColor: "linear-gradient(135deg, #ec4899 0%, #db2777 100%)", iconColor: "#EC4899", url: "/activities/brave-steps" },
+  { id: "urge-surfing", icon: TrendingUp, label: "Urge Surfing", bgColor: "linear-gradient(135deg, #10b981 0%, #059669 100%)", iconColor: "#10B981", url: "/activities/urge-surfing" },
 ];
 
 const wellnessGuideCards: TopicCard[] = [

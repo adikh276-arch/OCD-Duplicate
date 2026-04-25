@@ -263,11 +263,11 @@ export function OCDPage() {
 
             <div className="grid grid-cols-3 md:grid-cols-6 gap-4 md:gap-6">
               {[
-                { label: "Log OCD Moments", Icon: FileText, grad: "#F39C12", link: "/ocd/activities/ocd-moments", external: false },
+                { label: "Log OCD Moments", Icon: FileText, grad: "#F39C12", link: "/activities/ocd-moments", external: false },
                 { label: "Journal", Icon: BookOpen, grad: "#3498DB", link: "/journal", external: false },
-                { label: "OCD in Daily Life", Icon: Calendar, grad: "#FF9F43", link: "/ocd/activities/ocd-daily-life", external: false },
-                { label: "Mood Tracker", Icon: Heart, grad: "#E74C3C", link: "/ocd/activities/mood-tracker", external: false },
-                { label: "Energy Check", Icon: Battery, grad: "#9B59B6", link: "/ocd/activities/urge-surfing", external: false },
+                { label: "OCD in Daily Life", Icon: Calendar, grad: "#FF9F43", link: "/activities/ocd-daily-life", external: false },
+                { label: "Mood Tracker", Icon: Heart, grad: "#E74C3C", link: "/activities/mood-tracker", external: false },
+                { label: "Energy Check", Icon: Battery, grad: "#9B59B6", link: "/activities/urge-surfing", external: false },
                 { label: "OCD Assessment", Icon: CheckCircle, grad: "#27AE60", link: "assessment", external: false },
               ].map((tool, i) => (
                 <motion.button

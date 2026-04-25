@@ -109,7 +109,7 @@ const tools: Tool[] = [
     icon: Sparkles,
     bgColor: "#F3E5F5",
     iconColor: "#AB47BC",
-    url: "/ocd/activities/urge-surfing"
+    url: "/activities/urge-surfing"
   },
   {
     id: "competing-response",
@@ -117,7 +117,7 @@ const tools: Tool[] = [
     icon: Shield,
     bgColor: "#E3F2FD",
     iconColor: "#42A5F5",
-    url: "/ocd/activities/response-guide"
+    url: "/activities/response-guide"
   },
   {
     id: "did-you-know",
@@ -125,7 +125,7 @@ const tools: Tool[] = [
     icon: Info,
     bgColor: "#E8F5E9",
     iconColor: "#66BB6A",
-    url: "/ocd/activities/did-you-know"
+    url: "/activities/did-you-know"
   },
   {
     id: "self-compassion-break",
@@ -133,7 +133,7 @@ const tools: Tool[] = [
     icon: Heart,
     bgColor: "#FFEBEE",
     iconColor: "#EF5350",
-    url: "/ocd/activities/self-compassion"
+    url: "/activities/self-compassion"
   }
 ];
 

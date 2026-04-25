@@ -109,7 +109,7 @@ const tools: Tool[] = [
     icon: TrendingUp,
     bgColor: "#E8F5E9",
     iconColor: "#10B981",
-    url: "/ocd/activities/brave-steps"
+    url: "/activities/brave-steps"
   },
   {
     id: "ritual-cost-calculator",
@@ -117,7 +117,7 @@ const tools: Tool[] = [
     icon: Calculator,
     bgColor: "#E3F2FD",
     iconColor: "#3B82F6",
-    url: "/ocd/activities/ritual-cost"
+    url: "/activities/ritual-cost"
   },
   {
     id: "trigger-map",
@@ -125,7 +125,7 @@ const tools: Tool[] = [
     icon: Map,
     bgColor: "#F3E5F5",
     iconColor: "#A855F7",
-    url: "/ocd/activities/trigger-map"
+    url: "/activities/trigger-map"
   },
   {
     id: "quiz",
@@ -133,7 +133,7 @@ const tools: Tool[] = [
     icon: HelpCircle,
     bgColor: "#FFF4E5",
     iconColor: "#F97316",
-    url: "/ocd/activities/truth-seeker"
+    url: "/activities/truth-seeker"
   }
 ];
 

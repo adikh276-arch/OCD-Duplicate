@@ -110,7 +110,7 @@ const tools: Tool[] = [
     icon: Clock,
     bgColor: "#F3E5F5",
     iconColor: "#A855F7",
-    url: "/ocd/activities/thought-diffusion"
+    url: "/activities/thought-diffusion"
   },
   {
     id: "thought-or-truth",
@@ -118,7 +118,7 @@ const tools: Tool[] = [
     icon: Lightbulb,
     bgColor: "#E3F2FD",
     iconColor: "#3B82F6",
-    url: "/ocd/activities/thought-truth"
+    url: "/activities/thought-truth"
   },
   {
     id: "uncertainty-acceptance",
@@ -126,7 +126,7 @@ const tools: Tool[] = [
     icon: Target,
     bgColor: "#E8F5E9",
     iconColor: "#10B981",
-    url: "/ocd/activities/uncertainty-acceptance"
+    url: "/activities/uncertainty-acceptance"
   },
   {
     id: "letter-to-ocd",
@@ -134,7 +134,7 @@ const tools: Tool[] = [
     icon: Mail,
     bgColor: "#FCE7F3",
     iconColor: "#EC4899",
-    url: "/ocd/activities/letter-to-ocd"
+    url: "/activities/letter-to-ocd"
   }
 ];
 

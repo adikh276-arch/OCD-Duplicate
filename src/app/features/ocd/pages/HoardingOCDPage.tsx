@@ -109,7 +109,7 @@ const tools: Tool[] = [
     icon: Trash2,
     bgColor: "#FFEBEE",
     iconColor: "#EF5350",
-    url: "/ocd/activities/one-thing-out"
+    url: "/activities/one-thing-out"
   },
   {
     id: "discard-it",
@@ -117,7 +117,7 @@ const tools: Tool[] = [
     icon: DiscIcon,
     bgColor: "#E3F2FD",
     iconColor: "#42A5F5",
-    url: "/ocd/activities/discard-it"
+    url: "/activities/discard-it"
   },
   {
     id: "clutter-free-space",
@@ -125,7 +125,7 @@ const tools: Tool[] = [
     icon: Home,
     bgColor: "#E8F5E9",
     iconColor: "#66BB6A",
-    url: "/ocd/activities/clutter-journal"
+    url: "/activities/clutter-journal"
   },
   {
     id: "emotion-journal",
@@ -133,7 +133,7 @@ const tools: Tool[] = [
     icon: BookOpen,
     bgColor: "#F3E5F5",
     iconColor: "#AB47BC",
-    url: "/ocd/activities/clutter-journal"
+    url: "/activities/clutter-journal"
   }
 ];
 
