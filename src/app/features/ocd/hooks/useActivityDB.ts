@@ -1,4 +1,5 @@
 import { useState, useCallback } from 'react';
+import { getStoredUserId } from '../utils/cookieAuth';
 
 /**
  * Hook for managing activity data persistence.
@@ -9,7 +10,7 @@ export const useActivityDB = (activitySlug: string) => {
   const [error, setError] = useState<string | null>(null);
 
   const executeQuery = useCallback(async (action: string, payload: any) => {
-    const currentUserId = sessionStorage.getItem('user_id') || document.cookie.split('; ').find(row => row.startsWith('user_id='))?.split('=')[1];
+    const currentUserId = getStoredUserId();
     const currentToken = sessionStorage.getItem('token');
 
     if (!currentUserId) {

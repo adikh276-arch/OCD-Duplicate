@@ -6,7 +6,8 @@ const COOKIE_MAX_AGE = 60 * 60 * 24; // 24 hours in seconds
 
 function buildCookieString(name: string, value: string, maxAge: number): string {
   const secure = window.location.protocol === 'https:' ? '; Secure' : '';
-  return `${name}=${encodeURIComponent(value)}; Max-Age=${maxAge}; Path=/; SameSite=Lax${secure}`;
+  const sameSite = secure ? '; SameSite=None' : '; SameSite=Lax';
+  return `${name}=${encodeURIComponent(value)}; Max-Age=${maxAge}; Path=/ ${sameSite}${secure}`;
 }
 
 export function setCookieAuth(userId: string, sessionId: string): void {
