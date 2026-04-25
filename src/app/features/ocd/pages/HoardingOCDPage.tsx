@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "motion/react";
 import {
   ChevronLeft,
@@ -125,7 +125,7 @@ const tools: Tool[] = [
     icon: Home,
     bgColor: "#E8F5E9",
     iconColor: "#66BB6A",
-    url: "https://platform.mantracare.com/clutter_free/"
+    url: "/ocd/activities/clutter-journal"
   },
   {
     id: "emotion-journal",
@@ -333,17 +333,7 @@ export function HoardingOCDPage() {
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.97 }}
                   className="bg-white border border-[#E5E7EB] rounded-2xl p-6 flex flex-col items-center gap-3 hover:shadow-lg transition-all"
-                  onClick={() => {
-                    if (tool.url) {
-                      if (tool.url.startsWith('/')) {
-                        navigate(tool.url);
-                      } else if (tool.url.includes("mantracare")) {
-                        navigate(`/tool?url=${encodeURIComponent(tool.url)}&title=${encodeURIComponent(tool.label)}`);
-                      } else {
-                        window.open(tool.url, "_blank");
-                      }
-                    }
-                  }}
+                  onClick={() => { if (tool.url) navigate(tool.url); }}
                 >
                   <div
                     className="w-16 h-16 rounded-2xl flex items-center justify-center"

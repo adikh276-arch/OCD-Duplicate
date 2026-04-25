@@ -1,4 +1,4 @@
-import { useNavigate, useSearchParams } from "react-router";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { ChevronLeft, Share2, Maximize2, RefreshCcw } from "lucide-react";
 import { motion } from "motion/react";
 import { useState, useEffect } from "react";

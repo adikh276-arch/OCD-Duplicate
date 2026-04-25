@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
 import { 
   ChevronLeft, 
   Sparkles, 
@@ -267,25 +267,19 @@ export function OCDPage() {
                 { label: "Journal", Icon: BookOpen, grad: "#3498DB", link: "/journal", external: false },
                 { label: "OCD in Daily Life", Icon: Calendar, grad: "#FF9F43", link: "/ocd/activities/ocd-daily-life", external: false },
                 { label: "Mood Tracker", Icon: Heart, grad: "#E74C3C", link: "/ocd/activities/mood-tracker", external: false },
-                { label: "Energy Check", Icon: Battery, grad: "#9B59B6", link: "https://web.mantracare.com/app/energy_tracker", external: true },
-                { label: "OCD Assessment", Icon: CheckCircle, grad: "#27AE60", link: "https://app.mantracare.org/ocd-test/", external: true },
+                { label: "Energy Check", Icon: Battery, grad: "#9B59B6", link: "/ocd/activities/urge-surfing", external: false },
+                { label: "OCD Assessment", Icon: CheckCircle, grad: "#27AE60", link: "assessment", external: false },
               ].map((tool, i) => (
                 <motion.button
                   key={tool.label}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={() => {
-                    if (tool.link.startsWith('/')) {
-                      navigate(tool.link);
-                    } else if (tool.external) {
-                      if (tool.link.includes('mantracare')) {
-                        navigate(`/tool?url=${encodeURIComponent(tool.link)}&title=${encodeURIComponent(tool.label)}`);
-                      } else {
-                        window.open(tool.link, '_blank');
-                      }
-                    } else {
-                      navigate(tool.link);
+                    if (tool.link === 'assessment') {
+                      setShowMobileAppModal(true);
+                      return;
                     }
+                    navigate(tool.link);
                   }}
                   className="flex flex-col items-center gap-2"
                 >

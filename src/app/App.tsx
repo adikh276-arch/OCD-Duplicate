@@ -46,7 +46,6 @@ import { PureOStory2 } from "./features/ocd/stories/PureOStory2";
 import { PureOStory3 } from "./features/ocd/stories/PureOStory3";
 import { PureOStory4 } from "./features/ocd/stories/PureOStory4";
 import { PureOStory5 } from "./features/ocd/stories/PureOStory5";
-import { ToolView } from "./features/ocd/pages/ToolView";
 import { OCDActivities } from "./features/ocd/activities/OCDActivities";
 
 function App() {
@@ -100,9 +99,7 @@ function App() {
         <Route path="/pure-o-story-3" element={<PureOStory3 />} />
         <Route path="/pure-o-story-4" element={<PureOStory4 />} />
         <Route path="/pure-o-story-5" element={<PureOStory5 />} />
-        <Route path="/tool" element={<ToolView />} />
-
-        {/* OCD Inline Activities */}
+{/* OCD Inline Activities */}
         <Route path="/ocd/activities/*" element={<OCDActivities />} />
         
         {/* Catch all redirect to root */}

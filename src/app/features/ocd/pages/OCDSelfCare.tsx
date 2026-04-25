@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence, type Variants } from "motion/react";
 import { 
   ChevronLeft, 
@@ -63,23 +63,23 @@ interface MindfulnessCard {
 }
 
 const topicCards: TopicCard[] = [
-  { id: "ocd-tips", icon: Lightbulb, label: "OCD Tips", bgColor: "#FFF4E5", iconColor: "#FFB347", url: "https://platform.mantracare.com/ocd-tips" },
-  { id: "manage-ocd", icon: Shield, label: "Manage OCD", bgColor: "#EBF4FF", iconColor: "#4F95FF", url: "https://platform.mantracare.com/ocd_management" },
+  { id: "ocd-tips", icon: Lightbulb, label: "OCD Tips", bgColor: "#FFF4E5", iconColor: "#FFB347", url: "/ocd" },
+  { id: "manage-ocd", icon: Shield, label: "Manage OCD", bgColor: "#EBF4FF", iconColor: "#4F95FF", url: "/ocd" },
   { id: "fear-ladder", icon: TrendingUp, label: "Fear Ladder", bgColor: "#F3EEFF", iconColor: "#9D6CFF", url: "/ocd/activities/fear-ladder" },
   { id: "self-compassion", icon: Heart, label: "Self Compassion", bgColor: "#FFEBF0", iconColor: "#FF6B9D", url: "/ocd/activities/self-compassion" },
   { id: "ocd-cycle", icon: RefreshCw, label: "OCD Cycle", bgColor: "#E0F7FA", iconColor: "#00BCD4", url: "/ocd/activities/ocd-cycle" },
-  { id: "reframing-thoughts", icon: Brain, label: "Reframing Thoughts", bgColor: "#E8F8F5", iconColor: "#34D399", url: "/ocd/activities/reframing-thoughts" },
+  { id: "thought-truth", icon: Brain, label: "Thought or Truth", bgColor: "#E8F8F5", iconColor: "#34D399", url: "/ocd/activities/thought-truth" },
   { id: "success-stories", icon: Award, label: "Success Stories", bgColor: "#F7FEE7", iconColor: "#84CC16", url: "/ocd/activities/ocd-success-stories" },
-  { id: "meditation", icon: BookOpen, label: "Meditation", bgColor: "#EDE9FE", iconColor: "#8B5CF6", url: "/service/meditation" },
+  { id: "trigger-map", icon: BookOpen, label: "Trigger Map", bgColor: "#EDE9FE", iconColor: "#8B5CF6", url: "/ocd/activities/trigger-map" },
 ];
 
 const selfCareToolCards: TopicCard[] = [
   { id: "log-ocd-moments", icon: Clock, label: "Log OCD Moments", bgColor: "linear-gradient(135deg, #a855f7 0%, #9333ea 100%)", iconColor: "#A855F7", url: "/ocd/activities/ocd-moments" },
   { id: "ocd-daily-life", icon: Calendar, label: "OCD In Daily Life", bgColor: "linear-gradient(135deg, #06b6d4 0%, #0891b2 100%)", iconColor: "#06B6D4", url: "/ocd/activities/ocd-daily-life" },
   { id: "mood-tracker", icon: Smile, label: "Mood Tracker", bgColor: "linear-gradient(135deg, #f59e0b 0%, #d97706 100%)", iconColor: "#F59E0B", url: "/ocd/activities/mood-tracker" },
-  { id: "gratitude-tracker", icon: Star, label: "Gratitude Tracker", bgColor: "linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%)", iconColor: "#FBBF24", url: "https://web.mantracare.com/app/gratitude_logs" },
-  { id: "vibe-tracker", icon: Sparkles, label: "Vibe Tracker", bgColor: "linear-gradient(135deg, #ec4899 0%, #db2777 100%)", iconColor: "#EC4899", url: "https://web.mantracare.com/app/vibe_tracker" },
-  { id: "withdrawal-tracker", icon: TrendingUp, label: "Withdrawal Tracker", bgColor: "linear-gradient(135deg, #10b981 0%, #059669 100%)", iconColor: "#10B981", url: "https://web.mantracare.com/app/withdrawal_tracker" },
+  { id: "clutter-journal", icon: Star, label: "Clutter Journal", bgColor: "linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%)", iconColor: "#FBBF24", url: "/ocd/activities/clutter-journal" },
+  { id: "brave-steps", icon: Sparkles, label: "Brave Steps", bgColor: "linear-gradient(135deg, #ec4899 0%, #db2777 100%)", iconColor: "#EC4899", url: "/ocd/activities/brave-steps" },
+  { id: "urge-surfing", icon: TrendingUp, label: "Urge Surfing", bgColor: "linear-gradient(135deg, #10b981 0%, #059669 100%)", iconColor: "#10B981", url: "/ocd/activities/urge-surfing" },
 ];
 
 const wellnessGuideCards: TopicCard[] = [
@@ -158,15 +158,7 @@ export function OCDSelfCare() {
                       whileHover={{ y: -2 }}
                       whileTap={{ scale: 0.98 }}
                       onClick={() => {
-                        if (tool.url) {
-                          if (tool.url.startsWith('/')) {
-                            navigate(tool.url);
-                          } else if (tool.url.includes('mantracare')) {
-                            navigate(`/tool?url=${encodeURIComponent(tool.url)}&title=${encodeURIComponent(tool.label)}`);
-                          } else {
-                            window.open(tool.url, '_blank');
-                          }
-                        }
+                        if (tool.url) navigate(tool.url);
                       }}
                       className="rounded-2xl p-5 shadow-sm flex flex-col items-start justify-between h-28"
                       style={{ background: tool.bgColor }}
@@ -201,15 +193,7 @@ export function OCDSelfCare() {
                       whileHover={{ y: -2 }}
                       whileTap={{ scale: 0.98 }}
                       onClick={() => {
-                        if (topic.url) {
-                          if (topic.url.startsWith('/')) {
-                            navigate(topic.url);
-                          } else if (topic.url.includes('mantracare')) {
-                            navigate(`/tool?url=${encodeURIComponent(topic.url)}&title=${encodeURIComponent(topic.label)}`);
-                          } else {
-                            window.open(topic.url, '_blank');
-                          }
-                        }
+                        if (topic.url) navigate(topic.url);
                       }}
                       className="bg-white border border-[#E2E8F0] rounded-2xl py-6 px-2 hover:shadow-md transition-all text-center"
                     >
@@ -248,15 +232,7 @@ export function OCDSelfCare() {
                       whileHover={{ y: -2 }}
                       whileTap={{ scale: 0.98 }}
                       onClick={() => {
-                        if (guide.url) {
-                          if (guide.url.startsWith('/')) {
-                            navigate(guide.url);
-                          } else if (guide.url.includes('mantracare')) {
-                            navigate(`/tool?url=${encodeURIComponent(guide.url)}&title=${encodeURIComponent(guide.label)}`);
-                          } else {
-                            window.open(guide.url, '_blank');
-                          }
-                        }
+                        if (guide.url) navigate(guide.url);
                       }}
                       className="bg-white border border-[#E2E8F0] rounded-2xl py-6 px-2 hover:shadow-md transition-all text-center"
                     >
