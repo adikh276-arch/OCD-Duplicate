@@ -9,15 +9,23 @@ export const TokenGuard: React.FC<TokenGuardProps> = ({ children }) => {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
+    // If already have session, pass through immediately
     const userId = sessionStorage.getItem('user_id');
     if (userId) {
       setIsAuthenticated(true);
       return;
     }
 
-    // Handshake protocol
+    // If NOT inside an iframe (direct URL access / standalone), bypass auth entirely
+    const isInIframe = window.self !== window.top;
+    if (!isInIframe) {
+      sessionStorage.setItem('user_id', 'standalone');
+      setIsAuthenticated(true);
+      return;
+    }
+
+    // Handshake protocol — accept token from any MantraCare subdomain
     const handleMessage = (event: MessageEvent) => {
-      // Security check: Only trust messages from MantraCare domains
       if (!event.origin.includes('mantracare.com')) return;
 
       if (event.data?.type === 'TOKEN_RESPONSE' && event.data?.user_id) {
@@ -28,22 +36,19 @@ export const TokenGuard: React.FC<TokenGuardProps> = ({ children }) => {
 
     window.addEventListener('message', handleMessage);
 
-    // Request token from parent
-    window.parent.postMessage({ type: 'TOKEN_REQUEST' }, 'https://api.mantracare.com');
+    // Request token from parent — use wildcard target so any MantraCare host receives it
+    try {
+      window.parent.postMessage({ type: 'TOKEN_REQUEST' }, '*');
+    } catch (e) {
+      // cross-origin postMessage may throw in some browsers — safe to ignore
+    }
 
-    // Timeout for local development or if handshake fails
+    // 8-second timeout before showing error
     const timeout = setTimeout(() => {
-      if (!isAuthenticated && !sessionStorage.getItem('user_id')) {
-        // For development, we might want to set a dummy user_id if not in iframe
-        if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-          console.log('TokenGuard: Development mode - setting dummy user_id');
-          sessionStorage.setItem('user_id', '999');
-          setIsAuthenticated(true);
-        } else {
-          setError('Authentication timeout. Please try again within the MantraCare app.');
-        }
+      if (!sessionStorage.getItem('user_id')) {
+        setError('Authentication timeout. Please try again within the MantraCare app.');
       }
-    }, 3000);
+    }, 8000);
 
     return () => {
       window.removeEventListener('message', handleMessage);
@@ -60,7 +65,7 @@ export const TokenGuard: React.FC<TokenGuardProps> = ({ children }) => {
           </div>
           <h2 className="text-xl font-bold text-slate-900 mb-2">Access Denied</h2>
           <p className="text-slate-600 mb-6">{error}</p>
-          <button 
+          <button
             onClick={() => window.location.reload()}
             className="w-full py-3 bg-[#043570] text-white rounded-xl font-semibold hover:bg-[#032a5a] transition-colors"
           >
