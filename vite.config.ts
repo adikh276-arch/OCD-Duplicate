@@ -30,6 +30,8 @@ export default defineConfig({
       // Alias @ to the src directory
       '@': path.resolve(__dirname, './src'),
     },
+    // Force a single copy of both router packages so RouterContext is never split
+    dedupe: ['react-router', 'react-router-dom'],
   },
 
   // File types to support raw imports. Never add .css, .tsx, or .ts files to this.

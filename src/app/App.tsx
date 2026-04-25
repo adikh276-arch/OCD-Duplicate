@@ -1,5 +1,4 @@
-import { Routes, Route, Navigate } from "react-router";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { OCDSelfCare } from "./features/ocd/pages/OCDSelfCare";
 import { OCDPage } from "./features/ocd/pages/OCDPage";
 import { HealthOCDPage } from "./features/ocd/pages/HealthOCDPage";
