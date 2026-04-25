@@ -8,11 +8,13 @@ export const useActivityDB = (activitySlug: string) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const userId = sessionStorage.getItem('user_id');
+  const userId = sessionStorage.getItem('user_id') || document.cookie.split('; ').find(row => row.startsWith('user_id='))?.split('=')[1];
+  const token = sessionStorage.getItem('token');
 
   const executeQuery = useCallback(async (action: string, payload: any) => {
     if (!userId) {
-      console.warn('ActivityDB: No user_id found in session.');
+      console.error(`ActivityDB Error [${activitySlug}]: No user identity found.`);
+      setError('Identity not found');
       return null;
     }
 

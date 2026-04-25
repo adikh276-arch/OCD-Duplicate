@@ -32,6 +32,63 @@ const resources = {
         "error_desc": "Please try again.",
         "complete_session": "Save Moment"
       },
+      "welcome": {
+        "badge": "QUIZ",
+        "title": "Thought or Truth?",
+        "description": "Learn to distinguish between intrusive thoughts and reality.",
+        "details": "5 Questions • Interactive Practice",
+        "button": "Let's Begin"
+      },
+      "before": {
+        "title": "Before we start...",
+        "p1": "OCD often blurs the line between a thought and a fact. Just because you have a thought doesn't mean it's true or that it will happen.",
+        "p2": "In this exercise, you'll see statements. Swipe right if it's a 'Truth' (a fact), or left if it's a 'Thought' (an intrusive obsession).",
+        "button": "I'm Ready"
+      },
+      "quiz": {
+        "questionCount": "Question {{current}} of {{total}}",
+        "falseHint": "THOUGHT",
+        "trueHint": "TRUTH",
+        "correct": "Correct!",
+        "incorrect": "Not quite...",
+        "continue": "Next Question"
+      },
+      "results": {
+        "amazing": "Amazing Work!",
+        "niceTry": "Good Effort!",
+        "keepLearning": "Keep Practicing",
+        "scoreMsg": "You scored {{score}} out of {{total}}",
+        "heartsMsg": "Wellness:",
+        "remember": "Remember: A thought is just a sequence of words or images in your mind. It doesn't define you.",
+        "tryAgain": "Practice Again"
+      },
+      "questions": [
+        {
+          "q": "The stove is definitely on and the house will burn down.",
+          "correctExplain": "Exactly. This is a classic 'what-if' obsession, not a confirmed fact.",
+          "wrongExplain": "Actually, this is an intrusive thought. It's a fear-based projection, not a fact."
+        },
+        {
+          "q": "My hands feel dry because I have washed them five times today.",
+          "correctExplain": "Correct! This is a physical fact based on your actions.",
+          "wrongExplain": "Actually, this is a observable truth about your physical state."
+        },
+        {
+          "q": "If I don't tap the door three times, something bad will happen.",
+          "correctExplain": "Yes! This is magical thinking — a thought, not a law of nature.",
+          "wrongExplain": "This is a thought. There is no physical link between tapping and 'bad things'."
+        },
+        {
+          "q": "I am currently holding a phone or sitting at a computer.",
+          "correctExplain": "Correct. This is your current objective reality.",
+          "wrongExplain": "Actually, this is a fact about your immediate surroundings."
+        },
+        {
+          "q": "I am a bad person because I had an unwanted intrusive thought.",
+          "correctExplain": "Correct. Your character is not defined by the content of intrusive thoughts.",
+          "wrongExplain": "Intrusive thoughts are ego-dystonic. Having them doesn't make you 'bad'."
+        }
+      ],
       "screen1": {
         "label": "MINDFULNESS PRACTICE",
         "title": "Urge Surfing",
