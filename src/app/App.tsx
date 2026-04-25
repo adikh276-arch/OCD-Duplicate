@@ -46,14 +46,14 @@ import { PureOStory2 } from "./features/ocd/stories/PureOStory2";
 import { PureOStory3 } from "./features/ocd/stories/PureOStory3";
 import { PureOStory4 } from "./features/ocd/stories/PureOStory4";
 import { PureOStory5 } from "./features/ocd/stories/PureOStory5";
-import { OCDActivities } from "./features/activities/OCDActivities";
+import { OCDActivities } from "./features/ocd/activities/OCDActivities";
 
 function App() {
   return (
     <BrowserRouter basename="/ocd_selfcare">
       <Routes>
         <Route path="/" element={<OCDSelfCare />} />
-        <Route path="/ocd" element={<OCDPage />} />
+        <Route path="/manage" element={<OCDPage />} />
         <Route path="/health-ocd" element={<HealthOCDPage />} />
         <Route path="/hoarding-ocd" element={<HoardingOCDPage />} />
         <Route path="/compulsive-hoarding-article" element={<CompulsiveHoardingArticle />} />

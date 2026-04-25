@@ -63,8 +63,8 @@ interface MindfulnessCard {
 }
 
 const topicCards: TopicCard[] = [
-  { id: "ocd-tips", icon: Lightbulb, label: "OCD Tips", bgColor: "#FFF4E5", iconColor: "#FFB347", url: "/ocd" },
-  { id: "manage-ocd", icon: Shield, label: "Manage OCD", bgColor: "#EBF4FF", iconColor: "#4F95FF", url: "/ocd" },
+  { id: "ocd-tips", icon: Lightbulb, label: "OCD Tips", bgColor: "#FFF4E5", iconColor: "#FFB347", url: "/manage" },
+  { id: "manage-ocd", icon: Shield, label: "Manage OCD", bgColor: "#EBF4FF", iconColor: "#4F95FF", url: "/manage" },
   { id: "fear-ladder", icon: TrendingUp, label: "Fear Ladder", bgColor: "#F3EEFF", iconColor: "#9D6CFF", url: "/activities/fear-ladder" },
   { id: "self-compassion", icon: Heart, label: "Self Compassion", bgColor: "#FFEBF0", iconColor: "#FF6B9D", url: "/activities/self-compassion" },
   { id: "ocd-cycle", icon: RefreshCw, label: "OCD Cycle", bgColor: "#E0F7FA", iconColor: "#00BCD4", url: "/activities/ocd-cycle" },
