@@ -9,6 +9,7 @@ import {
   FileText, 
   Heart, 
   Shield, 
+  Headphones,
   ChevronRight, 
   ChevronDown,
   CloudRain,
