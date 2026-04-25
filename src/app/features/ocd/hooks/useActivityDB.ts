@@ -8,11 +8,11 @@ export const useActivityDB = (activitySlug: string) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const userId = sessionStorage.getItem('user_id') || document.cookie.split('; ').find(row => row.startsWith('user_id='))?.split('=')[1];
-  const token = sessionStorage.getItem('token');
-
   const executeQuery = useCallback(async (action: string, payload: any) => {
-    if (!userId) {
+    const currentUserId = sessionStorage.getItem('user_id') || document.cookie.split('; ').find(row => row.startsWith('user_id='))?.split('=')[1];
+    const currentToken = sessionStorage.getItem('token');
+
+    if (!currentUserId) {
       console.error(`ActivityDB Error [${activitySlug}]: No user identity found.`);
       setError('Identity not found');
       return null;
@@ -27,10 +27,10 @@ export const useActivityDB = (activitySlug: string) => {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${sessionStorage.getItem('token') || ''}`
+          'Authorization': `Bearer ${currentToken || ''}`
         },
         body: JSON.stringify({
-          userId,
+          userId: currentUserId,
           activity: activitySlug,
           action,
           payload
@@ -48,7 +48,7 @@ export const useActivityDB = (activitySlug: string) => {
     } finally {
       setLoading(false);
     }
-  }, [activitySlug, userId]);
+  }, [activitySlug]);
 
   return { executeQuery, loading, error };
 };
