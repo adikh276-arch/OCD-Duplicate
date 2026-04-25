@@ -1,4 +1,4 @@
-name: Build & Push ocd_selfcare:2.3
+name: Build & Push ocd_selfcare:2.4
 
 on:
   push:
@@ -55,7 +55,7 @@ jobs:
           platforms: linux/amd64
           push: true
           tags: |
-            bunker.mantracare.com/lovable/ocd_selfcare:2.3
+            bunker.mantracare.com/lovable/ocd_selfcare:2.4
             bunker.mantracare.com/lovable/ocd_selfcare:latest
           cache-from: type=gha
           cache-to: type=gha,mode=max
