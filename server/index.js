@@ -98,9 +98,12 @@ app.post('/api/persistence', async (req, res) => {
 
 // Serve static files in production
 if (process.env.NODE_ENV === 'production') {
-  app.use('/ocd_selfcare', express.static(path.join(__dirname, '../dist/ocd_selfcare')));
-  app.get('/ocd_selfcare/*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../dist/ocd_selfcare/index.html'));
+  const staticPath = path.join(__dirname, '../dist');
+  app.use('/ocd_selfcare', express.static(staticPath));
+  
+  // Catch-all route for SPA
+  app.get(['/ocd_selfcare', '/ocd_selfcare/*'], (req, res) => {
+    res.sendFile(path.join(staticPath, 'index.html'));
   });
 }
 
