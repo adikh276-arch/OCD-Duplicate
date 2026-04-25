@@ -24,7 +24,7 @@ export const useActivityDB = (activitySlug: string) => {
 
     try {
       // This is the standardized MantraCare Persistence API endpoint
-      const response = await fetch('https://api.mantracare.com/persistence', {
+      const response = await fetch('https://api.mantracare.com/api/persistence', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
