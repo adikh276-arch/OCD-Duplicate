@@ -17,7 +17,7 @@ export const ActivityLayout: React.FC<ActivityLayoutProps> = ({ children, title 
       window.parent.postMessage({ type: 'EXIT_ACTIVITY' }, 'https://web.mantracare.com');
     } else {
       // Fallback for standalone mode
-      navigate("/manage");
+      navigate("/");
     }
   };
 

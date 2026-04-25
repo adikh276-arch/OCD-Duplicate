@@ -1,5 +1,5 @@
 // @ts-nocheck
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Home, Briefcase, Users, MapPin, Zap, Clock, Shield, Plus, History as HistoryIcon, ArrowRight, Loader2 } from 'lucide-react';
 import { useActivityDB } from '../../../hooks/useActivityDB';
 import { toast } from 'sonner';

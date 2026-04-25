@@ -56,7 +56,6 @@ function App() {
       <BrowserRouter basename="/ocd_selfcare">
       <Routes>
         <Route path="/" element={<OCDSelfCare />} />
-        <Route path="/manage" element={<OCDPage />} />
         <Route path="/ocd-tips" element={<OCDTipsPage />} />
         <Route path="/health-ocd" element={<HealthOCDPage />} />
         <Route path="/hoarding-ocd" element={<HoardingOCDPage />} />
